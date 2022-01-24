@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment
+{
+    class tempinfarenheit
+    {
+        static void Main()
+        {
+            double temperature;
+            Console.WriteLine("Enter the temperature:");
+            temperature = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Convert temperature to celsius");
+            double celsius;
+            celsius = (temperature - 32) * 5 / 9;
+            Console.WriteLine("{0} in celsius", celsius);
+
+        }
+    }
+}
