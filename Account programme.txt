@@ -1,0 +1,69 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Account
+{
+
+    class Account
+    {
+        long AccountNo;
+        string CustomerName;
+        string AccountType;
+        float balance = 25000.0f;
+
+
+        public Account(long Acc_no, string name, string acc_type)
+        {
+            AccountNo = Acc_no;
+            CustomerName = name;
+            AccountType = acc_type;
+
+        }
+        public void TransactionType()
+        {
+
+            Console.WriteLine("Enter the Transaction type:W/D");
+            var Transaction = Convert.ToChar(Console.ReadLine());
+            if (Transaction == 'D' || Transaction == 'd')
+            {
+
+                Credit(5000);
+            }
+            else
+            {
+                Debit(4200);
+            }
+        }
+        public void Credit(int amount)
+        {
+            balance = balance + amount;
+            Console.WriteLine("Account holder name:{0}\nAvailable Balance after Deposit is:{1}:", CustomerName, balance);
+        }
+        public void Debit(int amount)
+        {
+            balance = balance - amount;
+            Console.WriteLine("Account holder name:{0}\nAvailable Balance after Withdrawal is:{1}", CustomerName, balance);
+        }
+        public void show_accountdetails()
+        {
+            Console.WriteLine("The Users Account details:");
+            Console.WriteLine("Account number: " + AccountNo + "\n" + "Customer Name: " + CustomerName + " \n" + "Account Type: " + AccountType);
+            Console.WriteLine("Initial Balance:{0}", balance);
+            TransactionType();
+
+        }
+
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Account account = new Account(25647890765993, "Venkat kanneganti", "Savings");
+            account.show_accountdetails();
+            Console.ReadLine();
+        }
+    }
+}

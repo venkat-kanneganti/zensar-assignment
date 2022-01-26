@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+namespace Account
+{
+    class word
+    {
+
+        static void Main()
+        {
+            string s = "HelloWorld";
+            string s1 = "HelloWorld";
+            int length = s.Length;
+
+
+          
+           
+            Console.WriteLine("The length of Str are {0}", length);
+            Console.WriteLine("The equal of Str are {0}", s.Equals(s1));
+            
+
+        }
+
+        
+    }
+    }
+

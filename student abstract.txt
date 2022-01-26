@@ -1,0 +1,79 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Account
+{
+    abstract class studentClass
+    {
+        public string stdname;
+        public int studentid;
+        public float grade;
+
+
+        abstract public Boolean Ispassed(float grade);
+    }
+    
+     class undergraduate : studentClass
+     {
+        public override Boolean Ispassed(float grade)
+        {
+            Console.WriteLine("Enter student Name:");
+            stdname = Console.ReadLine();
+            Console.WriteLine("enter student name{0}", stdname);
+            Console.WriteLine("enter student id");
+            studentid = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("enter student id{0}", studentid);
+
+            if (grade >= 70.0f)
+            {
+
+             Console.WriteLine("Result is:");
+             return true;
+            }
+            else
+            {
+                  Console.WriteLine("Result is:");
+                  return false;
+            }
+            
+        }
+
+     }
+    class graduate : studentClass
+    {
+        public override Boolean Ispassed(float grade)
+        {
+            Console.WriteLine("Enter student Name:");
+            stdname = Console.ReadLine();
+            Console.WriteLine("enter student name{0}", stdname);
+            Console.WriteLine("enter student id");
+            studentid = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("enter student id{0}", studentid);
+            if (grade >= 80.0f)
+            {
+                Console.WriteLine("Result is:");
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("Result is:");
+                return false;
+            }
+        }
+    }
+
+        class Test
+        {
+            static void Main(string[] args)
+            {
+            undergraduate ug = new undergraduate();
+            Console.WriteLine(ug.Ispassed(68.4f));
+            graduate g = new graduate();
+            Console.WriteLine(g.Ispassed(79.4f));
+            Console.Read();
+            }
+        }
+}
