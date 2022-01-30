@@ -1,0 +1,103 @@
+Write a program in C# Sharp to create a nested structure to store two data for an employee in an array. 
+
+Test Data:
+
+Create a nested structure and store data in an array :                              
+-------------------------------------------------------                          
+Name of the employee : H.Rana                                                    
+Input day of the birth : 05                                                      
+Input month of the birth : 02                                                    
+Input year for the birth : 58                                                    
+                                                                                 
+Name of the employee : S.Mathur                                                  
+Input day of the birth : 04                                                      
+Input month of the birth : 08                                                    
+Input year for the birth : 59 
+
+
+
+--------------------------------------------------------
+programme--
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace assesment3
+{
+  class nestedstructure
+    {
+
+      public  struct employee
+        {
+           public string ename;
+         public  int dateofbirth;
+       
+        }
+
+    struct dateofbirth
+    {
+        int day;
+        int month;
+        int year;
+    }
+  
+        static void Main()
+        {
+            int da=0;
+            int mon=0;
+            int yea=0;
+            int tot = 2;
+            Console.WriteLine("enter data to the array:");
+            employee[] e = new employee[tot];
+
+            for(int i =0; i < tot;i++)
+            {
+                Console.WriteLine("ennter the name of employee:");
+                string nm = Console.ReadLine();
+                e[i].ename = nm;
+
+                Console.WriteLine("ennter the day of employee:");
+                int day = Convert.ToInt32(Console.ReadLine());
+                e[i].dateofbirth = day;
+
+                Console.WriteLine("ennter the month of employee:");
+                int month = Convert.ToInt32(Console.ReadLine());
+                e[i].dateofbirth = month;
+
+                Console.WriteLine("ennter the year of employee:");
+                int year = Convert.ToInt32(Console.ReadLine());
+                //Console.WriteLine();
+                e[i].dateofbirth = year;
+                
+
+            }
+
+            
+            
+        }
+    }
+}
+
+--------------------------------------------------
+output-
+
+enter data to the array:
+ennter the name of employee:
+h.rana
+ennter the day of employee:
+08
+ennter the month of employee:
+09
+ennter the year of employee:
+2000
+ennter the name of employee:
+siva
+ennter the day of employee:
+01
+ennter the month of employee:
+08
+ennter the year of employee:
+1987

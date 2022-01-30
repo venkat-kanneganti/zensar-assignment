@@ -1,0 +1,78 @@
+6. Write a program in C# Sharp to insert the information of two books. 
+
+Test Data :
+
+Insert the information of two books :                    
+-----------------------------------------                
+Information of book 1 :                                  
+Input name of the book : BASIC                           
+Input the author : S.TROELSTRA                           
+                                                         
+Information of book 2 :                                  
+Input name of the book : C+                              
+Input the author : G.RTRTG   
+------------------------------------------------------------------------
+
+
+programme--
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace assesment3
+{
+    struct book
+    {
+        public string title;
+        public string author;
+    }
+    public class insert
+    {
+        public static void Main()
+        {
+            
+            book[] books = new book[2];
+            
+            
+            Console.Write("\n\nInsert the information of two books :\n");
+           
+            for (int i = 0; i < 2; i++)
+            {
+                Console.WriteLine("Information of books :");
+
+                Console.Write("Input name of the book : ",i+1);
+                books[i].title = Console.ReadLine();
+
+                Console.Write("Input the author : ");
+                books[i].author = Console.ReadLine();
+               
+                Console.WriteLine();
+            }
+
+            for (int i = 0; i <= 2; i++)
+            {
+                Console.WriteLine("{0}: Title = {1},  Author = {2}", i + 1, books[i].title, books[i].author);
+                Console.WriteLine();
+            }
+
+        }
+    }
+}
+
+
+
+output--
+
+Information of books1 :
+Input name of the book: BASIC
+Input the author : S.torsolona
+
+Information of books2 :
+Input name of the book: C+
+Input the author : G.trgd
+
+1: Title = BASIC,  Author = S.torsolona
+
+2: Title = C+,  Author = G.trgd

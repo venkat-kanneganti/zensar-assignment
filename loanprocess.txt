@@ -1,0 +1,102 @@
+2. Write a class called LoanProcess with Loan_No, Customer Name, LoanAmount, EMI_Amount, Account_Balance as its members. 
+Create a method calculate_EMI() for the LoanAmount , with the rate of interest as 13% for a total of 3 years and store it in the EMI_Amount. 
+The rest of the information to be passed through constructors. 
+Write another function CheckBalance() which checks if the Account_Balance is less than the EMI_AMount.
+ If yes then throw a custom exception. Display " Not Sufficient Balance to repay Loan" in the finally.
+
+
+programme--
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Collections;
+
+
+namespace assesment3
+{
+    class loanexception : ApplicationException
+    {
+        public loanexception(string msg) : base(msg)
+        {
+
+        }
+    }
+    class Loanprocess
+    {
+        int loanno;
+        string customername;
+        double loanamt;
+        double acntbal;
+        double emiamt;
+
+
+        public Loanprocess(int lno, string cn, double acbal)
+        {
+            loanno = lno;
+            customername = cn;
+            acntbal = acbal;
+            Console.WriteLine("loanno:{0} with customername:{1} and acntbal:{2}", loanno, customername, acntbal);
+        }
+
+        public void calculate_EMI()
+        {
+
+
+
+            Console.WriteLine("enter loan amt");
+            loanamt = Convert.ToInt32(Console.ReadLine());
+            emiamt = loanamt * 0.13 * 3;
+            Console.WriteLine("The emi amount is: {0}", emiamt);
+
+
+        }
+        public void Checkbalance()
+        {
+            Console.WriteLine("to check the balance:");
+            if (acntbal < emiamt)
+            {
+                throw (new loanexception("Not Sufficient Balance to repay Loan"));
+            }
+            else
+                Console.WriteLine("Loan payment successfully");
+        }
+
+
+
+
+        class Test
+        {
+            static void Main()
+            {
+                Console.WriteLine("enter the details:");
+                Loanprocess lp = new Loanprocess(12345, "venkat", 20000);
+                try
+                {
+                    lp.calculate_EMI();
+                    lp.Checkbalance();
+                }
+                catch (loanexception le)
+                {
+                    Console.WriteLine(le.Message);
+                }
+                Console.Read();
+            }
+        }
+    }
+            
+
+
+}
+
+output---
+enter the details:
+loanno:12345 with customername:venkat and acntbal:20000
+enter loan amt
+10000
+The emi amount is: 3900
+to check the balance:
+Loan payment successfully
+

@@ -1,0 +1,72 @@
+1. Create a console application to book train tickets. 
+Create a Passanger class with (Name, Age) and write a function called TicketBooking(no_of_tickets) that takes no.of tickets to be booked. 
+If the no of tickets is > 5 per booking, raise an user defined exception, and print "cannot book more than 2 tickets". Else Print  "Ticket Booked Successfully". 
+
+programme--
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace assesment3
+{
+    class ticketexception : ApplicationException
+    {
+        public ticketexception(string msg) : base(msg)
+        {
+
+        }
+        
+    }
+    class vote
+    {
+        
+        string Name;
+        int age;
+        int ticket;
+        public void TicketBooking()
+        {
+            Console.WriteLine("Enter your Name:");
+            Name = Console.ReadLine();
+            Console.WriteLine("Enter Your Age:");
+            age = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter number of tickets:");
+            ticket = Convert.ToInt32(Console.ReadLine());
+            if (ticket > 5)
+            {
+                throw (new ticketexception("Cannot book more than two tickets"));
+            }
+            else
+                Console.WriteLine("Ticket booked successfully");
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            vote v = new vote();
+            try
+            {
+                v.TicketBooking();
+            }
+            catch (ticketexception ve)
+            {
+                Console.WriteLine(ve.Message + " " + ve.Source);
+            }
+            Console.Read();
+        }
+    }
+}
+
+
+output--
+
+Enter your Name:
+venkat
+Enter Your Age:
+22
+Enter number of tickets:
+12
+Cannot book more than two tickets assesment3

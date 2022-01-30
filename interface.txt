@@ -1,0 +1,100 @@
+3.Create an Interface IStudent with StudentId and Name as Properties, ShowDetails() as its method.
+ Create 2 classes Dayscholar and Resident that implements the interface Properties and Methods.
+ Test The functionalities.
+
+programme---
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace assesment3
+{
+    interface IStudent
+    {
+         string Name { get; set; }
+          int id { get; set; }
+
+
+        // void ShowDetails(string Name, int dsid);
+         void ShowDetails();
+
+
+
+    }
+        
+
+   class Dayscholar : IStudent
+    {
+        public string Name
+        {
+
+            get { return Name; }
+            set { Name = value; }
+        }
+        public int id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+
+        // public void ShowDetails(string dsna, int dsid)
+        public void ShowDetails()
+        {
+
+
+            // Console.WriteLine("dsname:{0} and dsid:{1}", dsna, dsid);
+            Console.WriteLine("dsname:{0} and dsid:{1}", Name, id);
+        }
+       
+    }
+    class  Resident: IStudent
+    {
+        public string Name
+        {
+            get { return Name; }
+            set { Name = value; }
+        }
+        public int id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        //public void ShowDetails(string dsna, int dysid)
+        public void ShowDetails()
+        {
+
+            //  Console.WriteLine("dsname:{0} and dsid:{1}", dsna, dysid);
+            Console.WriteLine("dsname:{0} and dsid:{1}", Name, id);
+
+        }
+
+    }
+    class studentinterface
+    {
+        static void Main()
+        {
+            Console.WriteLine("enter the details");
+                IStudent ist = new Resident();
+                ist.Name = "venkat";
+                ist.id = 236;
+                ist.ShowDetails();
+                //ist.ShowDetails("venkat", 1234);
+                IStudent istd = new Dayscholar();
+                istd.Name = "swetha";
+                istd.id = 238;
+                istd.ShowDetails();
+            // istd.ShowDetails("kanneganti", 7890);
+            Console.ReadLine();
+
+
+                 
+
+            }
+    }
+}
+
