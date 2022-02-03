@@ -1,0 +1,48 @@
+3. Create a simple Stationery application to add items and display added items using Generic collections
+
+
+--------------------------------------------------------------
+
+programme-
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment__4
+{
+    class Stationary
+    {
+        static void Main()
+        {
+            List<string> ls = new List<string>();
+            ls.Add("Pencil");
+            ls.Add("Pen");
+            ls.Add("Eraser");
+            ls.Add("Scale");
+            ls.Add("Books");
+            ls.Add("Shapaner");
+            Console.WriteLine("The stationary items are:");
+            foreach (var item in ls)
+            {
+                Console.WriteLine(item);
+            }
+            Console.Read();
+        }
+    }
+}
+
+
+----------------------------------------------------------------------
+
+output--
+
+The stationary items are:
+Pencil
+Pen
+Eraser
+Scale
+Books
+Shapaner

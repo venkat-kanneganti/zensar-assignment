@@ -1,0 +1,84 @@
+2.. Create a Class called Products with Productid, Product Name, Price. Accept 10 Products, 
+sort them based on the price,
+ and display the sorted Products
+----------------------------------------------------------------------------------------------------
+
+programme--
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment__4
+{
+    class Productt
+    {
+        static void Main()
+        {
+
+            SortedList<double, string> Prod = new SortedList<double, string>();
+            Console.WriteLine("Enter 10 Product Details:");
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine("Enter Product{0} Details:", i + 1);
+                Console.WriteLine("Enter ProductPrice");
+                Prod.Add(Convert.ToDouble(Console.ReadLine()), Console.ReadLine());
+               
+            }
+
+            Console.WriteLine("After Sorting the Price of Products is:");
+            foreach (KeyValuePair<double, string> Pr in Prod)
+            {
+                Console.WriteLine("ProductName:{1}\nProductPrice:{0}", Pr.Key, Pr.Value);
+            }
+
+        }
+    }
+
+}
+
+
+
+----------------------------------------------------
+
+output--
+
+
+Enter 10 Product Details:
+Enter Product1 Details:
+Enter ProductPrice
+10000
+redmi
+Enter Product2 Details:
+Enter ProductPrice
+60000
+iphone
+Enter Product3 Details:
+Enter ProductPrice
+35000
+samsung
+Enter Product4 Details:
+Enter ProductPrice
+23000
+nokia
+Enter Product5 Details:
+Enter ProductPrice
+37000
+oneplus
+After Sorting the Price of Products is:
+ProductName:redmi
+ProductPrice:10000
+ProductName:nokia
+ProductPrice:23000
+ProductName:samsung
+ProductPrice:35000
+ProductName:oneplus
+ProductPrice:37000
+ProductName:iphone
+ProductPrice:60000
+Press any key to continue . . .
+
+   

@@ -1,0 +1,80 @@
+1. Write a program to find the Sum and the Average points scored by the teams in the IPL.
+ Create a Class called Cricket that has a function called Pointscalculation(int no_of_matches) that takes no.of matches as input and accepts that many scores from the user. 
+The function should then display the Average and Sum of the scores
+
+
+------------------------------
+programme-
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Collections;
+using System.Collections.ObjectModel;
+
+namespace Assignment__4
+{
+    class Cricket
+    {
+        int sum = 0;
+        int avg;
+
+        public void PointsCalculation(int no_of_matches)
+        {
+            int[] score = new int[10];
+            for (int i = 0; i < no_of_matches; i++)
+            {
+                Console.WriteLine("Enter match {0} score", i + 1);
+                score[i] = Convert.ToInt32(Console.ReadLine());
+                sum += score[i];
+
+            }
+            avg = sum / no_of_matches;
+              Console.WriteLine("{0} and {1}", sum, avg);
+        }
+
+            
+
+
+        static void Main(string[] args)
+        {
+            int n;
+            Cricket c = new Cricket();
+            Console.WriteLine("enter no of matches");
+            n = Convert.ToInt32(Console.ReadLine());
+            c.PointsCalculation(n);
+           
+            Console.Read();
+
+
+        }
+    }
+}
+
+-----------------------------------------------
+
+output---
+
+
+enter no of matches
+3
+Enter match 1 score
+128
+Enter match 2 score
+138
+Enter match 3 score
+158
+424 and 141
+
+
+        
+
+
+
+
+
+
+
+
