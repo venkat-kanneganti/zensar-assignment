@@ -1,0 +1,99 @@
+
+<!--1.Write a JavaScript program to calculate multiplication and division of two numbers (input from user).-->
+<!DOCTYPE html>
+<body>
+    <script>
+        function Multiply()
+        {
+        num1 = document.getElementById("firstNumber").value;
+        num2 = document.getElementById("secondNumber").value;
+        document.getElementById("result").innerHTML = num1 * num2;
+        }
+
+       function Divide() 
+       { 
+        num1 = document.getElementById("firstNumber").value;
+        num2 = document.getElementById("secondNumber").value;
+        document.getElementById("result").innerHTML = num1 / num2;
+       }
+    </script>
+First Number : <input type="text" id="firstNumber" /><br/><br/>
+Second Number: <input type="text" id="secondNumber" /><br/><br/>
+<input type="button" onClick="Multiply()" Value="Multiply" />&nbsp;&nbsp;&nbsp;
+<input type="button" onClick="Divide()" Value="Division" />
+<p>The Result is : <br>
+<div id = "result"></div>
+</p>
+</body>
+
+
+<!--2.Write a JavaScript to get the extension of a filename given by the user(hint: use split and pop())-->
+<!DOCTYPE html>
+<head>
+  <h4>The extension of a filename</h4>
+</head>
+<body>
+    <script> 
+    filename = "JavaScript.html"
+    document.writeln(filename.split('.').pop());
+    filename = "Example.txt"
+    document.writeln(filename.split('.').pop());
+   </script>
+</body>
+
+
+<!--3.Write a JavaScript program to compute the sum of the given two integers. If the two values are same, then returns triple their sum.-->
+<!DOCTYPE html>
+<head>
+  <h4>The sum of the two given integers.If the two values are same, then return triple their sum</h4>
+</head>
+<body>
+    <script>
+        function TripleSum (a, b)
+        {
+          if (a == b) 
+          {
+             return 3 * (a + b);
+          } 
+          else
+          {
+            return (a + b);
+          }
+        }
+document.writeln(TripleSum(30, 40));
+document.writeln(TripleSum(20, 20));
+  </script>
+</body>
+
+
+<!--4.Write a JavaScript program to check whether two given integer values are in the range 50..99 (inclusive). 
+    Return true if both of them are in the said range, else false-->
+<!DOCTYPE html>
+<head>
+  <h4>To check whether two given integer values are in the range 50.....99
+       Return true if either of them are in the said range.</h4>
+</head>
+<body>
+     <script>
+         function Check_Num(x, y) 
+         {
+            if ((x >= 50 && x <= 99) || (y >= 50 && y <= 99))
+            {
+               return true;
+            } 
+            else 
+            {
+                return false;
+            }
+        }
+document.writeln(Check_Num(16, 80));
+document.writeln(Check_Num(25, 95));
+document.writeln(Check_Num(10, 120));
+     </script>
+</body>
+
+
+
+
+
+
