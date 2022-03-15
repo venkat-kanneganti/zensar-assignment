@@ -1,16 +1,25 @@
-﻿@model IEnumerable<MVCAssignment2.Models.MovieTable>
+@model IEnumerable<MVCAssignment2.Models.MovieTable>
 
 @{
     ViewBag.Title = "GetMoviesScaffolded";
 }
 
 <h2>GetMoviesScaffolded</h2>
+<p>
+    @using (Html.BeginForm("GetMovieName", "MovieTable", FormMethod.Get))
+    {
+        <text><b>Search Movies By Year</b></text> @Html.TextBox("val")<input type="submit" value="val" />
+    }
+</p>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MovieID)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.MovieName)
         </th>
@@ -21,19 +30,22 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.MovieName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MovieReleaseDate)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MovieID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MovieID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MovieID })
-        </td>
-    </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.MovieID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MovieName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MovieReleaseDate)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.MovieID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.MovieID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.MovieID })
+    </td>
+</tr>
 }
 
 </table>
