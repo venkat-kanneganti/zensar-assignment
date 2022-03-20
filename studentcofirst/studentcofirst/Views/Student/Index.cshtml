@@ -1,0 +1,72 @@
+﻿@model IEnumerable<studentcofirst.Models.StudentInfo>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<p>
+    @using (Html.BeginForm("searchBy", "Student", FormMethod.Get))
+    {
+        <b>Search By:</b>
+        @Html.RadioButton("searchBy", "city")<text>City</text>
+        @Html.RadioButton("searchBy", "Branch")<text>Branch</text>
+
+        @Html.RadioButton("searchBy", "ID")<text>ID</text>
+        @Html.RadioButton("searchBy", "Percentage")<text>Percentage</text>
+        //@Html.TextBox("s1") <input type="submit" value="s" /><br />
+        <text><b>search ID</b></text> @Html.TextBox("search")<input type="submit" value="search" />
+    }
+</p>
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.city)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Branch)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Percentage)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.city)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Branch)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Percentage)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.stdid }) |
+                @Html.ActionLink("Details", "Details", new { id = item.stdid }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.stdid })
+            </td>
+        </tr>
+    }
+
+</table>
+

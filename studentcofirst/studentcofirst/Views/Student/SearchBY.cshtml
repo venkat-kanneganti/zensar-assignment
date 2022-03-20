@@ -1,0 +1,46 @@
+﻿@model IEnumerable<studentcofirst.Models.StudentInfo>
+@{
+    ViewBag.Title = "SearchBY";
+}
+
+<h2>SearchBY</h2>
+<table class="table">
+    <tr>
+        <th>
+            Student Name
+        </th>
+        <th>
+            City
+        </th>
+        <th>
+            Branch
+        </th>
+        <th>
+            Percentage
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.city
+            </td>
+            <td>
+                @item.Branch
+            </td>
+            <td>
+                @item.Percentage
+            </td>
+
+        </tr>
+    }
+</table>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
